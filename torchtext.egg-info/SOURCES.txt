@@ -1,0 +1,5 @@
+torchtext.egg-info/PKG-INFO
+torchtext.egg-info/SOURCES.txt
+torchtext.egg-info/dependency_links.txt
+torchtext.egg-info/top_level.txt
+torchtext.egg-info/zip-safe

@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: torchtext
+Version: 0.1.1
+Summary: text utilities and datasets for torch deep learning
+Home-page: https://github.com/pytorch/text
+Author: PyTorch core devs and James Bradbury
+Author-email: jekbradbury@gmail.com
+License: BSD
+Description: torch-text provides text and NLP data utilities
+        and datasets for torch
+Platform: UNKNOWN
