@@ -1,2 +1,4 @@
 *egg*
 dist
+*.ipynb_checkpoints
+notebooks/.*

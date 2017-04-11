@@ -30,7 +30,7 @@ setup_info = dict(
         'visdom',
         'torchtext'
     ],
-    dependency_links=['https://github.com/dvsrepo/text']
+    dependency_links=['git+https://github.com/dvsrepo/text.git@master#egg=torchtext-0.0.1']
 )
 
 setup(**setup_info)
