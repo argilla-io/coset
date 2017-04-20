@@ -99,9 +99,8 @@ def train(model, batches, num_epochs=2, lot=None, optimizer=None):
                         dev_acc,
                         lot=lot)
 
-def trainer(batch_size, lr, min_freq=None, vocab_size=None):
-    model = BaseClassifier(vocab_size, hidden_size, output_dim)
-    optimizer = torch.optim.Adamax(model.parameters(), lr=lr, weight_decay=0.005)#, momentum=0.9
+
+def trainer(batch_size, lr, min_freq=None, vocab_size=None, model=None, optimizer=None):
     print('Starting training with batch size {}'.format(batch_size))
     train_iter, dev_iter = data.BucketIterator.splits((trainset, devset),
                                                   batch_size=batch_size,
@@ -163,9 +162,14 @@ LABEL.build_vocab(trainset, devset)
 # Output dimensions are two:
 output_dim = len(LABEL.vocab)
 
+
+
 for min_frequency in range(1,10):
     TEXT.build_vocab(trainset, devset, min_freq=min_frequency)
     vocab_size = len(TEXT.vocab)
+
     for batch_size in range(16, 32, 8):
         for lr in np.arange(0.0002, 0.001, 0.0002):
-            trainer(batch_size, lr, min_freq=min_frequency, vocab_size=vocab_size)
+            model = BaseClassifier(vocab_size, hidden_size, output_dim)
+            optimizer = torch.optim.Adam(model.parameters(), lr=lr, weight_decay=0.005)
+            trainer(batch_size, lr, min_freq=min_frequency, vocab_size=vocab_size, model=model, optimizer=optimizer)
