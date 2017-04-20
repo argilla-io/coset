@@ -2,3 +2,4 @@
 dist
 *.ipynb_checkpoints
 notebooks/.*
+lib/__*
