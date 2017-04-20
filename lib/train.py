@@ -137,7 +137,7 @@ hidden_size = 100
 #     for lr in np.arange(0.0001, 0.0005, 0.0002):
 #         trainer(batch_size, lr)
 
-DATASET_PATH = '/Users/oeg/dev/recognai/data/datasets/cosetdata/'
+DATASET_PATH = 'data/'
 
 # Primero definimos los campos del dataset de entrenamiento
 f = (lambda t: not t.is_stop and t.is_alpha and len(t.orth_)>=2) # Examples: t.is_alpha, full documentation at: and t.is_alpha
